@@ -12,23 +12,31 @@
         <label for="numero">Insira um numero</label>
         <input type="number" id="numero" name="numero" required>
 
-        <button type="submit" name="divisores">Verificar</button>
+        <button type="submit" name="verificar_perfeito">Verificar</button>
 
     </form>
 
     <?php
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        if (isset($_POST['divisores'])) {
+        if (isset($_POST['verificar_perfeito'])) {
 
             $numero = $_POST['numero'];
 
-            for ($i = 1; $i <= $numero; $i++) {
+            $soma = 0;
+
+            for ($i = 1; $i <= ($numero - 1); $i++) {
 
                 if ($numero % $i === 0) {
-                    echo "<p>$i</p>";
+
+                    $soma += $i;
                 }
+            }
+            if ($soma == $numero) {
+                echo "O numero $numero é perfeito";
+            } else {
+                echo "O numero $numero não é perfeito";
             }
         };
     };
