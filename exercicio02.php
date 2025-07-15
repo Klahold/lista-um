@@ -14,26 +14,26 @@
 
         <button type="submit" name="tabuada">Tabuada</button>
 
-        <?php
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            if (isset($_POST['tabuada'])) {
-
-                $numero = $_POST['numero'];
-
-                for ($i=0; $i < 10; $i++) { 
-                    $tabuada = $numero * $i;
-                    echo '<br>';
-                    echo $tabuada;
-                }
-                
-            };
-        };
-
-        ?>
-
     </form>
+    <?php
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        if (isset($_POST['tabuada'])) {
+
+            $numero = $_POST['numero'];
+
+            for ($i = 0; $i < 10; $i++) {
+                $tabuada = $numero * $i;
+                echo '<br>';
+                echo $tabuada;
+            }
+        };
+    };
+
+    ?>
+
+
 
 </body>
 
